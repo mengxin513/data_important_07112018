@@ -9,7 +9,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 if __name__ == "__main__":
     print ("Loading data...")
 
-    microns_per_pixel = 2.16
+    microns_per_pixel = 1.72
     df = h5py.File("repeat.hdf5", mode = "r")
     group = df.values()[-1]
     n = len(group)
@@ -30,9 +30,9 @@ if __name__ == "__main__":
             moved_s = data["moved_stage_position"]
             diff[j, :] = final_c[:, 1:] - init_c[:, 1:]
             move[j, :] = moved_s[:] - init_s[:]
-        move[:, 0] = move[:, 0] * 0.0120
+        move[:, 0] = move[:, 0] * 0.00972
         move[:, 1] = 0
-        move[:, 2] = move[:, 2] * 0.0088
+        move[:, 2] = move[:, 2] * 0.00743
         abs_move = np.sqrt(np.sum(move**2, axis = 1))
         error = np.sqrt(np.sum(diff**2, axis = 1))
         dist[i] = np.mean(abs_move, axis = 0)

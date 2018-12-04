@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
             matplotlib.rcParams.update({'font.size': 12})
 
-            microns_per_pixel = 2.16
+            microns_per_pixel = 1.72
 
             t = data[:, 0]
             x = data[:, 1] * microns_per_pixel

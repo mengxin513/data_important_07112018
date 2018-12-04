@@ -9,7 +9,7 @@ import matplotlib
 if __name__ == "__main__":
     print ("Loading data...")
 
-    microns_per_pixel = 2.16
+    microns_per_pixel = 1.72
     df = h5py.File("step_size.hdf5", mode = "r")
     group1 = df["data_steps000"]
     group2 = df["data_distance000"]

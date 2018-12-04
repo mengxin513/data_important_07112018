@@ -37,14 +37,14 @@ def plotting2(x_data, y_data, x_label, y_label, group):
 
 if __name__ == "__main__":
 
-    with PdfPages("raster_snake.pdf") as pdf:
+    with PdfPages("raster_standard.pdf") as pdf:
 
         print ("Loading data...")
 
         df = h5py.File("raster.hdf5", mode = "r")
         for i in range(len(df)):
             group = df["raster%03d" % i]
-            subgroup = group["snake_raster000"]
+            subgroup = group["standard_raster000"]
             n = len(subgroup)
             data = np.zeros([n, 6])
             for i in range(n):
